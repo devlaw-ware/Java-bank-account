@@ -53,19 +53,36 @@ class ContaBancaria{
                     System.out.println("Saldo R$ "+ consultarSaldo());
                         break;
                 case 2:
-
-
-                    System.out.println("Valor do deposito R$ "+ depositar(););
+                    System.out.println("Valor do deposito R$ ");
+                    double valorDeposito = scanner.nextDouble();
+                        break;
+                case 3:
+                    System.out.println("Valor do deposito R$ ");
+                    double valorSaque = scanner.nextDouble();
+                    sacar(valorSaque);
+                        break;
+                case 4:
+                    System.out.println("Encerrando...");
+                        break;
+                default:
+                    System.out.println("Opção invalida");
             }
 
-        } while (opcao !=4);
 
+        } while (opcao !=4);
+        scanner.close();
     }
 
 }
 
-//Aqui é o nosso "main"
-public class GerenciaBancoJava{
+//Aqui é o nosso "main" onde o projeto vai rodar e tudo vai acontecer
+public class GerenciaBancoJava {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.println("Projeto de Conta Bancária em Java \n");
+        System.out.println("Alunos: Laura Viana & Nicolas Costas & Marcos Vieira\n");
+        System.out.println("Qual seu nome:\n");
+        String nome = scanner.nextLine(); // vai receber o que o usuario escrever no teclado
+    }
 }
-
