@@ -101,7 +101,7 @@ public class GerenciaBancoJava {
         //a minha varivel conta ela é do tipo ContaBancaria que foi a classe que ja criamos que recebe new ContaBancaria que vai receber os parametros que ja criamos
         ContaBancaria conta = new ContaBancaria(nome, sobrenome, cpf);
         conta.exibirMenu(); // aqui vai chamar o exibirMenu que criamos la em cima
-        System.out.println("Obrigada por usar nossos serviços! May the Force Be With You!");
+        System.out.println("Obrigada por usar nossos serviços! may the force be with you!");
         scanner.close(); // finalizar o scanner
 
     }
