@@ -1,3 +1,6 @@
+/*  Projeto realizado como parte na disciplina de AED_LAB com o tema:
+"Criar um sistema Bancário em Java"
+*/
 
 import java.util.Scanner; // lib para fazer a interação entre usuario no terminal - usarei para fazer
 
@@ -50,14 +53,15 @@ class ContaBancaria{
             opcao = scanner.nextInt();
             switch(opcao){
                 case 1:
-                    System.out.println("Saldo R$ "+ consultarSaldo());
+                    System.out.println("Saldo R$: "+ consultarSaldo());
                         break;
                 case 2:
-                    System.out.println("Valor do deposito R$ ");
+                    System.out.println("Valor do deposito R$: ");
                     double valorDeposito = scanner.nextDouble();
+                    depositar(valorDeposito);
                         break;
                 case 3:
-                    System.out.println("Valor do deposito R$ ");
+                    System.out.println("Valor do Saque R$: ");
                     double valorSaque = scanner.nextDouble();
                     sacar(valorSaque);
                         break;
@@ -82,7 +86,23 @@ public class GerenciaBancoJava {
 
         System.out.println("Projeto de Conta Bancária em Java \n");
         System.out.println("Alunos: Laura Viana & Nicolas Costas & Marcos Vieira\n");
+        System.out.println("========================================================\n");
+
         System.out.println("Qual seu nome:\n");
         String nome = scanner.nextLine(); // vai receber o que o usuario escrever no teclado
+
+        System.out.println("Qual seu sobrenome?:\n");
+        String sobrenome = scanner.nextLine();
+
+        System.out.println("Qual o seu CPF?:\n");
+        String cpf = scanner.nextLine();
+        // vamos instanciar tudo isso na nossa classe principal
+        // Ja que fizemos o nosso metro construtor eu to passando todos os para
+        //a minha varivel conta ela é do tipo ContaBancaria que foi a classe que ja criamos que recebe new ContaBancaria que vai receber os parametros que ja criamos
+        ContaBancaria conta = new ContaBancaria(nome, sobrenome, cpf);
+        conta.exibirMenu(); // aqui vai chamar o exibirMenu que criamos la em cima
+        System.out.println("Obrigada por usar nossos serviços! May the Force Be With You!");
+        scanner.close(); // finalizar o scanner
+
     }
 }
